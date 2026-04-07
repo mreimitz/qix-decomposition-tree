@@ -123,32 +123,6 @@ npm run build:dist
 npm run build
 ```
 
-## Package & Deploy
-
-```bash
-# From the extension source directory
-cd extension/qix-decomposition-tree
-
-# Create versioned ZIP in the release folder (exclude dev files)
-zip -r ../../release/qdt-v49.zip . \
-  -x "node_modules/*" "src/*" "package.json" "package-lock.json" \
-  -x "*.git*" "*.DS_Store" "__MACOSX/*" "*.zip"
-
-# Upload to Qlik Cloud via the Qlik Deployer MCP
-# or replace an existing extension by ID
-```
-
-**Important:** The ZIP must contain the root-level `.js`, `.qext`, `.css`, `.html` plus the `dist/` folder. Never include `src/`, `node_modules/`, or `package.json`.
-
-## Deployment Details
-
-| Property | Value |
-|---|---|
-| Tenant | mreimitz.eu.qlikcloud.com |
-| Extension ID | `LRS1Bve-vZU1K-g7U6MaFP8joV2-aUDH` |
-| qextFilename | `qix-decomposition-tree` |
-| Current deployed version | v48 (2026-04-07) |
-
 **CDN caching note:** After deploying a new version, navigate the browser away from the app (e.g., to `/analytics/home`) and back to force the CDN to serve fresh files. Browser cache clearing alone does not help — Qlik Cloud caches extension files server-side.
 
 ## Theming
