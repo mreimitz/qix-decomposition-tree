@@ -1,6 +1,6 @@
 # Qix Decomposition Tree
 
-A custom Qlik Sense supernova extension that replaces the AnyChart Decomposition Tree. Visualizes data across multiple dimensions as an interactive drill-down tree, enabling ad hoc exploration and root cause analysis.
+A custom Qlik Sense supernova Decomposition Tree. Visualizes data across multiple dimensions as an interactive drill-down tree, enabling ad hoc exploration and root cause analysis.
 
 ![Decomposition Tree](image.png)
 
