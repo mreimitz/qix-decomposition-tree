@@ -59,40 +59,6 @@ The native Qlik Styling Panel is included, providing background color/image, bor
 
 This extension follows the standard Qlik supernova build architecture — the same pattern used by Qlik's own first-party extensions (sn-table, sn-gantt-chart, etc.).
 
-**Build pipeline (two steps):**
-
-1. **Bundle npm dependencies** — esbuild compiles `src/build-libs.js` into `dist/libs.js` as a self-contained IIFE
-2. **Generate UMD supernova bundle** — `src/build-dist.js` (a Node.js script) reads the libs bundle, wraps everything in a UMD module that marks `@nebula.js/stardust` as an external dependency (provided by Qlik Cloud at runtime via AMD), and writes `dist/qix-decomposition-tree.js`
-
-The root `qix-decomposition-tree.js` is a simple AMD re-export:
-```javascript
-define(['./dist/qix-decomposition-tree'], function (supernova) {
-  return supernova;
-});
-```
-
-**Why this pattern:** `@nebula.js/stardust` must NOT be bundled — Qlik Cloud provides it at runtime. npm dependencies must be bundled because CSP blocks CDN loading. CSS is injected at runtime via `document.createElement('style')` because the RequireJS `css!` loader doesn't work in Qlik Cloud.
-
-## Build
-
-```bash
-cd extension/qix-decomposition-tree
-
-# Install dependencies (first time only)
-npm install
-
-# Bundle npm deps into dist/libs.js
-npm run build:libs
-
-# Generate the UMD supernova bundle
-npm run build:dist
-
-# Or both in one step
-npm run build
-```
-
-**CDN caching note:** After deploying a new version, navigate the browser away from the app (e.g., to `/analytics/home`) and back to force the CDN to serve fresh files. Browser cache clearing alone does not help — Qlik Cloud caches extension files server-side.
-
 ## Theming
 
 The extension reads from the active Qlik theme at render time:
