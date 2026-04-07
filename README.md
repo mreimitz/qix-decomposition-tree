@@ -55,38 +55,6 @@ The extension renders a horizontal tree where a root node (showing a measure tot
 
 The native Qlik Styling Panel is included, providing background color/image, border radius, and shadow controls — identical to Qlik's built-in charts.
 
-## Project Structure
-
-```
-qixDecompositionTree/
-├── README.md                          # This file
-├── IMPLEMENTATION_PLAN.md             # Original design and architecture plan
-├── extension/
-│   └── qix-decomposition-tree/        # Extension source
-│       ├── qix-decomposition-tree.js      # AMD entry point (loads dist bundle)
-│       ├── qix-decomposition-tree.qext    # Manifest (supernova: true)
-│       ├── qix-decomposition-tree.css     # Stub (styles injected at runtime)
-│       ├── qix-decomposition-tree.html    # Minimal HTML (required by deployer)
-│       ├── dist/
-│       │   ├── qix-decomposition-tree.js  # Built UMD supernova bundle (THE main code)
-│       │   └── libs.js                    # Bundled npm dependencies
-│       ├── src/
-│       │   ├── build-dist.js              # Node.js script that generates the UMD bundle
-│       │   └── build-libs.js              # esbuild entry for npm dependency bundling
-│       ├── package.json
-│       └── package-lock.json
-├── release/                           # Versioned deploy ZIPs (latest 3 kept)
-│   ├── qdt-v48.zip
-│   ├── qdt-v47.zip
-│   └── qdt-v45.zip
-└── research/                          # Reference material
-    ├── ANALYSIS.md                        # AnyChart extension analysis
-    ├── BROADER_RESEARCH.md                # Broader research on tree visualizations
-    ├── DEMO_DETAILED_STUDY.md             # Detailed study of AnyChart demo
-    ├── DOCUMENTATION_RESEARCH.md          # Qlik API documentation research
-    └── anychart-4x-decomposition-tree/    # Original AnyChart extension (reference)
-```
-
 ## Architecture
 
 This extension follows the standard Qlik supernova build architecture — the same pattern used by Qlik's own first-party extensions (sn-table, sn-gantt-chart, etc.).
