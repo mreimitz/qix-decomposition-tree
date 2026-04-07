@@ -1,0 +1,20 @@
+{
+  "name": "Decomposition Tree",
+  "description": "A decomposition tree that visualizes data across multiple dimensions. Automatically aggregates data and enables drilling down into dimensions in any order for ad hoc exploration and root cause analysis.",
+  "type": "visualization",
+  "version": "1.0.0",
+  "author": "Manuel Reimitz",
+  "icon": "share",
+  "supernova": true,
+  "keywords": ["qlik-sense", "visualization", "decomposition", "tree", "drill-down"],
+  "dependencies": {
+    "@nebula.js/stardust": "^2.0.0"
+  },
+  "support": {
+    "snapshot": true,
+    "export": true,
+    "exportData": true,
+    "sharing": true,
+    "selection": true
+  }
+}

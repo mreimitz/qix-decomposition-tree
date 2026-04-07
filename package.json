@@ -1,0 +1,14 @@
+{
+  "name": "qix-decomposition-tree",
+  "version": "1.0.0",
+  "description": "Decomposition tree extension for Qlik Sense",
+  "private": true,
+  "scripts": {
+    "build:libs": "npx esbuild src/build-libs.js --bundle --format=iife --outfile=dist/libs.js",
+    "build:dist": "node src/build-dist.js",
+    "build": "npm run build:libs && npm run build:dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}
