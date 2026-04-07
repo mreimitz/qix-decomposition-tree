@@ -2,6 +2,8 @@
 
 A custom Qlik Sense supernova extension that replaces the AnyChart Decomposition Tree. Visualizes data across multiple dimensions as an interactive drill-down tree, enabling ad hoc exploration and root cause analysis.
 
+![Decomposition Tree](image.png)
+
 ## What It Does
 
 The extension renders a horizontal tree where a root node (showing a measure total) branches into child nodes across dimension columns. Users click expand buttons to drill into any dimension in any order, building a custom decomposition path. Each node shows a value bar, label, and optional percentage. Clicking a node triggers a native Qlik selection.
