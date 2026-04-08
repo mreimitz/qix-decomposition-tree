@@ -1,4 +1,4 @@
-# Qix Decomposition Tree
+# Decomposition Tree
 
 A custom Qlik Sense supernova Decomposition Tree. Visualizes data across multiple dimensions as an interactive drill-down tree, enabling ad hoc exploration and root cause analysis.
 
